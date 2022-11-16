@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font: inherit;
+  font-family: "Space Grotesk", sans-serif;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html {
+  font-size: 62.5%;
+}
+html,
+body,
+#__next {
+  height: 100%;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]),
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+a,
+button {
+  transition: 0.3s ease-in-out;
+}
+.main {
+  display: flex;
+}
+.section-images {
+  width: 100%;
+  max-width: 48.3rem;
+  height: 100vh;
+  background: url("./assets/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.section-images__image-box {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 16.4rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 3.7rem;
+  filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+}
+.section-images__img1,
+.section-images__img2 {
+  width: 100%;
+  max-width: 44.7rem;
+  height: 24.5rem;
+  border-radius: 6px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.section-images__img1 {
+  padding: 2.8rem 3.186rem 2.65rem 3.2rem;
+  background: url("./assets/bg-card-front.png");
+}
+.section-images__img1-container {
+  color: white;
+}
+.logo-box {
+  margin-bottom: 6.4rem;
+}
+.logo-box a {
+  display: inline-block;
+}
+.credit-card-number {
+  font-weight: 500;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: 3.42222px;
+  margin-bottom: 2.55rem;
+}
+.last-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+.cardholder-name {
+  max-width: 30rem;
+}
+.section-images__img2 {
+  background: url("./assets/bg-card-back.png");
+  margin-left: 9.4rem;
+  position: relative;
+}
+.cvc-text {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11.1rem;
+  right: 5.7rem;
+  color: white;
+}
+.section-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-form.hide-section {
+  display: none;
+}
+.section-form__container {
+  width: 100%;
+  max-width: 38.1rem;
+  min-height: 35.2rem;
+}
+.card-form__label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: #21092f;
+  margin-bottom: 0.9rem;
+}
+.card-form__input-box {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.err-msg {
+  color: #ff5050;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-top: 8px;
+  display: none;
+}
+.err-msg.active {
+  display: block;
+}
+input {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #dfdee0;
+  border-radius: 8px;
+  padding: 1.1rem 1.6rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  color: #21092f;
+}
+input:focus {
+  border: 1px solid #6348fe;
+  outline: 1px solid #6348fe;
+}
+input::placeholder {
+  color: rgba(33, 9, 47, 0.25);
+}
+
+input.activeErr {
+  border: 1px solid #ff5050;
+}
+
+.card-form__other-box {
+  display: flex;
+  gap: 2rem;
+}
+.card-form__exp-inputs {
+  display: flex;
+  gap: 1rem;
+}
+.card-form__exp-inputs input {
+  width: 100%;
+  max-width: 8rem;
+}
+
+.card-form__cvc-box {
+  width: 100%;
+  max-width: 19.1rem;
+}
+.card-form__submit-btn {
+  width: 100%;
+  background: #21092f;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  border: 2px solid transparent;
+}
+.card-form__submit-btn:hover,
+.card-form__submit-btn:focus {
+  background: transparent;
+  border: 2px solid #21092f;
+  color: #21092f;
+}
+.section-success {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.section-success__container {
+  width: 100%;
+  max-width: 38.1rem;
+  text-align: center;
+}
+.section-succcess__icon {
+  margin: 0 auto;
+  display: inline-block;
+  margin-bottom: 3.5rem;
+}
+.section-success__title {
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: 3.42222px;
+  color: #21092f;
+}
+.section-success__text {
+  margin-bottom: 4.8rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  color: #8f8694;
+}
+.section-success.show-section {
+  display: flex;
+}
+
+.section-success__cta {
+  background: #21092f;
+  border-radius: 8px;
+  color: white;
+  display: block;
+  padding: 1.3rem 0.3rem 1.5rem 0.3rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+}
+@media all and (max-width: 84.0625em) {
+  .section-images__image-box {
+    left: 2rem;
+  }
+}
+
+@media all and (max-width: 64.8125em) {
+  .main {
+    flex-direction: column;
+  }
+  .section-images {
+    padding: 3rem;
+    max-width: 100%;
+    height: initial;
+    min-height: 24rem;
+    background: url("./assets/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .section-images__image-box {
+    position: relative;
+    width: 100%;
+    top: initial;
+    left: initial;
+    transform: initial;
+    align-items: center;
+  }
+  .section-images__img2 {
+    margin-left: 0;
+  }
+
+  .section-form,
+  .section-success {
+    padding: 9.1rem 2.4rem 4.5rem 2.4rem;
+  }
+}
+@media all and (max-width: 31.5625em) {
+  .section-images__img1,
+  .section-images__img2 {
+    max-width: 28.6rem;
+    height: 15.7rem;
+  }
+  .section-images__img1 {
+    padding: 1.76rem 2.1rem 1.96rem 1.9rem;
+    background: url("./assets/bg-card-front.png");
+  }
+  .logo-box {
+    margin-bottom: 3.7rem;
+    width: 5.4rem;
+    height: 3rem;
+  }
+  .credit-card-number {
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    letter-spacing: 2.2px;
+    margin-bottom: 1.7rem;
+  }
+  .last-row {
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    letter-spacing: 1.28571px;
+  }
+  .card-form__other-box {
+    gap: 1.1rem;
+  }
+  .card-form__exp-inputs {
+    gap: 0.8rem;
+  }
+}
+
+@media all and (max-width: 23.4375em) {
+  .section-images {
+    padding: 0 1.6rem;
+    min-height: 30rem;
+  }
+  .section-images__image-box {
+    flex-direction: column-reverse;
+    gap: 0;
+    position: absolute;
+    left: 50%;
+    top: 3.2rem;
+    transform: translateX(-50%);
+  }
+  .section-images__img1 {
+    position: relative;
+    top: -1.8rem;
+    left: -34px;
+    z-index: 3;
+  }
+  .section-images__img2 {
+    position: relative;
+    left: 33px;
+  }
+}
+@media all and (max-width: 23.375em) {
+  .section-images {
+    padding: 0 1.6rem;
+    min-height: 30rem;
+  }
+  .section-images__image-box {
+    gap: 1rem;
+  }
+  .section-images__img1 {
+    top: 0;
+    left: 0;
+  }
+  .section-images__img2 {
+    left: 0;
+  }
+  .card-form__other-box {
+    flex-wrap: wrap;
+  }
+  .card-form__exp-inputs {
+    flex-wrap: wrap;
+  }
+}
